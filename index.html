@@ -1,0 +1,99 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="container">
+            <!-- Logotipo à esquerda -->
+            <div class="logo-container">
+                <img src="C:\Users\emill\Downloads\FindBuscadastro\logo-removebg.png" alt="Logotipo do App" class="logo">
+            </div>
+
+            <!-- Formulário de Login/Cadastro à direita -->
+            <div class="form-container">
+                <!-- Formulário de Login -->
+                <form class="form" id="loginForm">
+                    <h2>Login</h2>
+                    <div class="input-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="loginPassword">Senha</label>
+                        <input type="password" id="loginPassword" placeholder="Digite sua senha" required>
+                        <span class="toggle-password" onclick="togglePassword('loginPassword')">👁️</span>
+                    </div>
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+
+                <!-- Botão para criar um novo registro -->
+                <div id="createAccountDiv">
+                    <p>Não tem uma conta?</p>
+                    <button type="button" class="btn" id="createAccountButton">Criar Registro</button>
+                </div>
+
+                <!-- Formulário de Cadastro (inicialmente oculto) -->
+                <form class="form" id="registerForm" style="display: none;">
+                    <h2>Cadastro</h2>
+                    <div class="input-group">
+                        <label for="firstName">Nome</label>
+                        <input type="text" id="firstName" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="lastName">Sobrenome</label>
+                        <input type="text" id="lastName" placeholder="Digite seu sobrenome" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="registerPassword">Senha</label>
+                        <input type="password" id="registerPassword" placeholder="Digite sua senha" required>
+                        <span class="toggle-password" onclick="togglePassword('registerPassword')">👁️</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="birthDate">Data de Nascimento</label>
+                        <input type="date" id="birthDate" required>
+                    </div>
+
+                    <!-- Checkbox de aceitação dos termos -->
+                    <div class="input-group">
+                        <input type="checkbox" id="termsCheckbox" required>
+                        <label for="termsCheckbox">
+                            Eu aceito os <a href="#" id="termsLink">termos de uso</a> e permito o rastreamento em tempo real.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn" id="submitBtn" disabled>Enviar Cadastro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 FindBus. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#" id="termsFooter">Termos de Uso</a> | 
+            <a href="#" id="privacyFooter">Política de Privacidade</a> | 
+            <a href="#" id="contactFooter">Contato</a>
+        </div>
+    </footer>
+
+    <!-- Modal para exibir termos e políticas -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div id="modalText"></div> <!-- Onde o texto do modal será exibido -->
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Vincula o arquivo JavaScript -->
+</body>
+</html>
